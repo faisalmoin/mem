@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="\\10.0.16.23\htdocs\test\MEF\portal\MEM_MIS.workspace">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="\\10.0.16.23\htdocs\test\MEF\portal\MEM_MIS.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="\\10.0.16.23\htdocs\test\MEF\portal\index.php" Name="FileName"/>
+      <int Value="33" Name="FirstVisibleLine"/>
+      <int Value="60" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="\\10.0.16.23\htdocs\test\MEF\portal\ResetPassword.php" Name="FileName"/>
+      <int Value="74" Name="FirstVisibleLine"/>
+      <int Value="91" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="\\10.0.16.23\htdocs\test\MEF\portal\RestPasswordConfirm.php" Name="FileName"/>
+      <int Value="59" Name="FirstVisibleLine"/>
+      <int Value="80" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="\\10.0.16.23\htdocs\test\MEF\portal\sales\Agr-Add.php" Name="FileName"/>
+      <int Value="156" Name="FirstVisibleLine"/>
+      <int Value="185" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

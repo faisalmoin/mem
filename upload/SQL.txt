@@ -1,0 +1,173 @@
+USE [MEF_School]
+GO
+/****** Object:  Table [dbo].[MemFin Royalty Credit]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MemFin Royalty Credit](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Generate] [varchar](50) NULL,
+	[Invoice No] [varchar](50) NULL,
+	[Date] [varchar](50) NULL,
+	[Total Amount] [decimal](38, 2) NULL,
+	[Royalty %] [varchar](50) NULL,
+	[Total Royalty] [varchar](50) NULL,
+	[Royalty Amount] [varchar](50) NULL,
+	[Net Payble] [decimal](38, 2) NULL,
+	[Service Tax] [varchar](50) NULL,
+	[Academic Year] [varchar](50) NULL,
+	[Company Name] [varchar](50) NULL,
+	[Trust Id] [varchar](50) NULL,
+	[Trust Name] [varchar](100) NULL,
+	[ST %] [varchar](50) NULL,
+	[Invoice SoftCopy] [varchar](200) NULL,
+ CONSTRAINT [PK__MemFin Royalty C__3A179ED3] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MemFin Franchisee Credit]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MemFin Franchisee Credit](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Generate] [varchar](50) NULL,
+	[Invoice No] [varchar](50) NULL,
+	[Date] [varchar](50) NULL,
+	[Total Amount] [varchar](50) NULL,
+	[Total Franchisee] [varchar](50) NULL,
+	[Franchisee Amount] [decimal](38, 2) NULL,
+	[Net Payble] [decimal](38, 2) NULL,
+	[Service Tax] [varchar](50) NULL,
+	[Academic Year] [varchar](50) NULL,
+	[Company Name] [varchar](50) NULL,
+	[Trust Name] [varchar](100) NULL,
+	[Trust ID] [varchar](50) NULL,
+	[Invoice SoftCopy] [varchar](200) NULL,
+ CONSTRAINT [PK__MemFin Franchise__336AA144] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MemFin Franchisee Debit]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MemFin Franchisee Debit](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Debit Amount] [decimal](38, 2) NULL,
+	[Deduction Amount] [varchar](50) NULL,
+	[Total Amount] [decimal](38, 2) NULL,
+	[Date] [varchar](50) NULL,
+	[Mode Of Payment] [varchar](50) NULL,
+	[Bank Name] [varchar](50) NULL,
+	[Cheque DD NO] [varchar](50) NULL,
+	[Cheque DD Date] [varchar](50) NULL,
+	[Trust Id] [varchar](50) NULL,
+	[Trust Name] [varchar](100) NULL,
+	[Voucher Number] [varchar](50) NULL,
+ CONSTRAINT [PK__MemFin Franchise__36470DEF] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Royalty Setup]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Royalty Setup](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Company Name] [varchar](10) NOT NULL,
+	[Fee Description] [varchar](100) NOT NULL,
+	[Fee Code] [varchar](100) NULL,
+	[Amount] [decimal](38, 0) NULL,
+	[Class] [varchar](50) NULL,
+	[Academic Year] [varchar](50) NULL,
+ CONSTRAINT [PK_Royalty Setup] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC,
+	[Company Name] ASC,
+	[Fee Description] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MemFin Royalty Debit]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MemFin Royalty Debit](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Debit Amount] [decimal](38, 2) NULL,
+	[Deduction Amount] [varchar](50) NULL,
+	[Total Amount] [decimal](38, 2) NULL,
+	[Date] [varchar](50) NULL,
+	[Mode Of Payment] [varchar](50) NULL,
+	[Bank Name] [varchar](50) NULL,
+	[Cheque DD NO] [varchar](50) NULL,
+	[Cheque DD Date] [varchar](50) NULL,
+	[Trust Id] [varchar](50) NULL,
+	[Trust Name] [varchar](100) NULL,
+	[Voucher Number] [varchar](50) NULL,
+	[Company Name] [varchar](50) NULL,
+ CONSTRAINT [PK__MemFin Royalty D__382F5661] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[MemFin Royalty Fee]    Script Date: 08/10/2016 10:53:47 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[MemFin Royalty Fee](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Fee Description] [varchar](50) NULL,
+	[Class] [varchar](50) NULL,
+	[Student Count] [varchar](50) NULL,
+	[Fee Amount] [decimal](18, 2) NULL,
+	[Invoice No] [varchar](100) NULL,
+	[Financial Year] [varchar](50) NULL,
+	[Company Name] [varchar](50) NULL,
+	[Trust Name] [varchar](200) NULL,
+	[Trust ID] [varchar](50) NULL,
+	[Date] [varchar](50) NULL,
+ CONSTRAINT [PK__MemFin Royalty F__2CBDA3B5] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO

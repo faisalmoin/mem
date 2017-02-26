@@ -1,0 +1,13 @@
+SET foreign_key_checks=0;
+INSERT INTO companies VALUES (default,'%company%',' ',0,0,0,0,0,0,'18:00',0,'09:00',8,'2009-01-01', 1, 0,15, 0, 0, '1234', 'noname@mydomain.com',1);
+INSERT INTO shifts VALUES (default, 'Default Shift',1, 'The default shift', '09:00:00','17:00:00');
+INSERT INTO shifts VALUES (default, 'Default Weekend Shift',1,'No work on weekends','12:00:00','12:00:00');
+UPDATE companies c, shifts s SET c.default_shift = s.shift_id WHERE s.name = 'Default Shift';
+UPDATE companies c, shifts s SET c.default_shift_wend = s.shift_id WHERE s.name = 'Default Weekend Shift';
+INSERT INTO locations VALUES (default, '%location%', 1, '', '', '', '', 1, '%ipadr%');
+INSERT INTO departments VALUES(default, 'All Employees', 0,1,0);
+INSERT INTO teams VALUES (default, 1, 'All Employees', 1, 0);
+INSERT INTO employees VALUES(default, 'Admin', '', 1, 1, 1, 1, '0001','1234','admin', aes_encrypt('p4ssw0rd', 'secrecy_is_good'), 'name@mydomain.com', 0, 'no phone', 'no phone', 'no phone', 0,1,0,5,0);
+UPDATE companies c, employees e SET c.manager_id = e.emp_id where e.fname = 'Admin';
+UPDATE mail_templates mt, companies c SET mt.company_id = c.company_id WHERE c.name = '%company%';
+SET foreign_key_checks=1;

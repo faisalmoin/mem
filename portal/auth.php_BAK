@@ -1,0 +1,107 @@
+<?php
+
+	$Login=$_REQUEST['LoginID'];
+	$Password=$_REQUEST['Password'];
+	
+	require_once("db.txt");
+	require_once("header.php");
+?>
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(function() {
+  var value = 0;
+  var interval = setInterval(function() {
+      value += 10;
+      $("#progress-bar")
+      .css("width", value + "%")
+      .attr("aria-valuenow", value)
+      .text(value + "%");
+      if (value >= 100)
+          clearInterval(interval);
+  }, 1000);
+});
+});//]]>  
+
+</script>
+<!-- progress bar -->
+<div class="container col-xs-4"></div>
+<div class="container col-xs-4">
+	<div class="progress progress-striped">
+		<div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+    progress 
+		</div>
+	</div>
+</div>
+<?php
+
+    //User Redirect to respective Home Page
+	$result=mysql_query("SELECT * FROM `login` WHERE `login`='$Login' AND `password`='$Password' AND `UsrStatus`='Active'") or die(mysql_error());
+	$row=mysql_num_rows($result);
+	echo "<br />".$row;
+	if($row != 0){
+		//Check User in Login Table
+            $LoginDetails = mysql_query("SELECT MAX(`LoginTime`) FROM `login` WHERE `login`='$Login' ") or die(mysql_error());
+            $UsrLogTime = mysql_fetch_array($LoginDetails);
+            $LoginDetails = mysql_query("SELECT `LoginTime`, `ActiveStat`, `SessionID` FROM `login` WHERE `login`='$Login' AND `LoginTime`='".$UsrLogTime[0]."'") or die(mysql_error());
+            $LogDet = mysql_fetch_array($LoginDetails);
+	    
+	    if($LogDet[1] == "" || mysql_num_rows($LoginDetails) == 0) {
+                    mysql_query("INSERT INTO `login` SET `login`='" . $Login . "', `password`='" . $Password . "', `ActiveStat`='1', `SessionID`='" . session_id() . "'") or die(mysql_error());
+                    header("Location: foe/ChangePassword.New.php");
+                }
+                if($LogDet[1] == "0"){
+                    mysql_query("INSERT INTO `login` SET `login`='" . $Login . "', `password`='" . $Password . "', `ActiveStat`='1', `SessionID`='" . session_id() . "'") or die(mysql_error());
+                    header("Location: foe/home.php");
+                }
+                if($LogDet[1] == "1"){
+                    echo("<br /><br /><br /><br /><div class='container' align='center'>Your session is active since ".date('d/M/Y H:i:s', strtotime($LogDet[0])).". Kindly logout from previous session ...<br />
+                        <a href='logout.php?id=$Login' class='btn btn-warning'>Logout</a>
+                    </div>");
+                }
+		else{	
+		header("Location: admin/home.php");
+		}
+	}
+	else{
+
+        $User=mysql_query("SELECT * FROM `user` WHERE `LoginID`='$Login' AND `Password`='$Password' AND `UserStatus`='Active'") or die(mysql_error());
+		$usr=mysql_num_rows($User);
+		if($usr == 1){
+			$UsrDet=mysql_fetch_array($User);
+
+            //Check User in Login Table
+            $LoginDetails = mysql_query("SELECT MAX(`LoginTime`) FROM `login` WHERE `login`='$Login' ") or die(mysql_error());
+            $UsrLogTime = mysql_fetch_array($LoginDetails);
+            $LoginDetails = mysql_query("SELECT `LoginTime`, `ActiveStat`, `SessionID` FROM `login` WHERE `login`='$Login' AND `LoginTime`='".$UsrLogTime[0]."'") or die(mysql_error());
+            $LogDet = mysql_fetch_array($LoginDetails);
+			
+			if($UsrDet[6] == "FOE"){
+                session_start();
+                $_SESSION['UserName']=$UsrDet[1];
+                $_SESSION['LoginID']=$UsrDet[3];
+                $_SESSION['Email']=$UsrDet[2];
+                $_SESSION['UserType']=$UsrDet[6];
+                $SessionID = session_id();
+
+                if($LogDet[1] == "" || mysql_num_rows($LoginDetails) == 0) {
+                    mysql_query("INSERT INTO `login` SET `login`='" . $Login . "', `password`='" . $Password . "', `ActiveStat`='1', `SessionID`='" . session_id() . "'") or die(mysql_error());
+                    header("Location: foe/ChangePassword.New.php");
+                }
+                if($LogDet[1] == "0"){
+                    mysql_query("INSERT INTO `login` SET `login`='" . $Login . "', `password`='" . $Password . "', `ActiveStat`='1', `SessionID`='" . session_id() . "'") or die(mysql_error());
+                    header("Location: foe/home.php");
+                }
+                if($LogDet[1] == "1"){
+                    echo("<br /><br /><br /><br /><div class='container' align='center'>Your session is active since ".date('d/M/Y H:i:s', strtotime($LogDet[0])).". Kindly logout from previous session ...<br />
+                        <a href='logout.php?id=$Login' class='btn btn-warning'>Logout</a>
+                    </div>");
+                }
+			}
+		}
+		else{		
+			//header("Location: index.php?er=1");
+		}
+	}
+	
+	require_once("footer.php");
+?>

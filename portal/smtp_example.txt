@@ -1,0 +1,37 @@
+require_once "../bs/class.phpmailer.php";
+		$mail = new PHPMailer();
+		$mail->IsSMTP();                                      // set mailer to use SMTP
+		$mail->Host = "125.16.64.67";  // specify main and backup server
+		$mail->SMTPAuth = true;     // turn on SMTP authentication
+		$mail->Username = "erpadministrator@mempl.com";  // SMTP username
+		$mail->Password = "access@1234"; // SMTP password
+		$mail->SMTPDebug = 1;
+		
+		$mail->From = "erpadministrator@mempl.com";
+		$mail->FromName = "MEM ERP";
+		
+		//Get user Name
+		$mail->AddAddress("Email", "FullName");
+		//CC & BCC Email
+		$mail->addCC("Email", "FullName");
+		$mail->addBCC("erpadministrator@mempl.com", "MEM ERP");
+		//$mail->AddReplyTo("erpadministrator@mempl.com", "MEM ERP");
+
+		//$mail->AddAttachment($MOUFiile);         // add attachments
+		//$mail->AddAttachment($LOIFile);    // optional name
+		$mail->IsHTML(true);                                  // set email format to HTML
+
+		$mail->WordWrap = 50;                                 // set word wrap to 50 characters
+		$mail->Subject = $subject;
+		$mail->Body    = $body;
+		$mail->AltBody = $body;
+		$mail->Body;
+			
+		if(!$mail->Send())
+		{
+		   echo "<p>Message could not be sent.";
+		   echo "Mailer Error: " . $mail->ErrorInfo."</p>";
+		}
+		else{
+			echo "<p>Message has been sent</p>";		
+		}

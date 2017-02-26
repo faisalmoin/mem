@@ -1,0 +1,62 @@
+/*-----------------------------------------------------------------------------------*/
+
+	LATRIX attendance tracking and reporting
+	Version 0.6.0
+	Copyright (c) 2006,2009 Manticore Software
+
+	Installation, configuration and user guide
+
+/*-----------------------------------------------------------------------------------*/
+
+	I.		Introduction
+	
+LATRIX is a simple web based application for the tracking of attendance times and
+reporting on these. It is NOT a timesheet application, HR solution or anything else.
+This software is published under the GPL, for details please see file gpl.txt.
+
+	II.	Requirements
+
+This software requires a number of other services in order to function:
+
+	A web server capable of running PHP V5
+	PHP V5
+	PEAR base module
+	PEAR modules: Mail Mail_Mime, Image_Canvas, Image_Graph, Image_Barcode, Image_Color, Net_SMTP, Net_Socket, Numbers_Roman, Numbers_Words
+	MySQL database server V4.0 or higher
+
+	III.	Installation
+	
+Installation should be pretty straightforward. Create a directory wherever you want it.
+Then unzip the tarball into it (preserve paths to make sure all the subdirectories are
+recreated as needed) and make sure that the user account used to run the web pages can
+access all these files (read-only access is sufficient) with
+
+	tar -xvzf latrix-0.6.0.tar.gz
+
+The folders /files and /images will need write access by the user account running the web server.
+Set the default page to "logger.php" to go by default to the main time-logging page.
+
+If you run LATRIX as part of another site, you don't need to change your web server
+configuration. In this case you will need to make a small change to include/styles.css to ensure
+the background picture for the page header is found.
+If you want to run LATRIX as an independent site you will need to update your
+web server configuration such that it finds the home directory of LATRIX. Obviously the
+details of this depend on the web server used. A sample file is include in the setup folder (apache.conf)
+
+You will need to create an empty database for the LATRIX. The user account using this database needs to have
+privileges for SELECT, UPDATE, INSERT and DELETE. Once this is done, start a web browser
+and go to <URL>/setup/setup.php, then follow the instructions.
+
+Eh voila, finished. Open a web browser, type in the URL you have configured to reach the site
+and you should the see the main time logging page of the LATRIX. The admin section is available 
+under <URL>/admin.php
+
+	IV.	Configuration
+	
+There are some settings that may need to be changed to suit your needs. All of these can be found in
+the file include/defs.inc. Comments indicate what the individual values are for (if there is no 
+comment next to a value, better leave it alone).
+
+	V.		User Guide
+
+Please check out the online documentation at www.latrix.org.uk

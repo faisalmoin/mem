@@ -1,0 +1,8 @@
+{
+ "metadata": {
+  "version": "1.0",
+  "ide": "CodeLite",
+  "type": "php"
+ },
+ "projects": ["/xampp/htdocs/itasset/IT_Asset.phprj", "MEM_MIS.phprj"]
+}

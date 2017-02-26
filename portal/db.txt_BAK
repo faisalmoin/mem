@@ -1,0 +1,24 @@
+<?php
+	set_time_limit(0);
+	
+	$mycon=mysql_connect("10.0.16.23", "root", "schools@514") or die(mysql_error());
+	if(!$mycon){
+		exit("<p style='color: #990000;'>Unable to connect DB ...</p>");
+	}
+	else{
+		mysql_select_db("eduschools") or die(mysql_error());
+		
+		$myServer = "10.0.0.37";
+		$myUser = "eisml.connect";
+		$myPass = "Alpha@2015";
+		$myDB = "MDB_School";
+
+		$conn = odbc_connect("Driver={SQL Server};Server=$myServer;Database=$myDB;", $myUser, $myPass);
+	
+		if(!$conn){
+			exit("<p style='color: #990000;'>Connection to DB via ODBC failed ...</p>");
+		}
+		
+	}
+	error_reporting(E_USER_WARNING);
+?>

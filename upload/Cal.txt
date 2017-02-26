@@ -1,0 +1,154 @@
+USE [MEF_School]
+GO
+/****** Object:  Table [dbo].[Calendar]    Script Date: 09/26/2016 13:40:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Calendar](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [varchar](100) NULL,
+	[Company Name] [varchar](30) NULL,
+	[Activity Type] [varchar](50) NULL,
+	[End Date] [varchar](20) NULL,
+	[Start Date] [varchar](20) NULL,
+	[Start Time] [varchar](20) NULL,
+	[End Time] [varchar](20) NULL,
+	[Year] [varchar](5) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+
+
+USE [MEF_School]
+GO
+/****** Object:  Table [dbo].[Employee]    Script Date: 09/26/2016 13:46:48 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Employee](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[timestamp] [timestamp] NOT NULL,
+	[No_] [varchar](20) NOT NULL,
+	[First Name] [varchar](30) NOT NULL,
+	[Middle Name] [varchar](30) NOT NULL,
+	[Last Name] [varchar](30) NOT NULL,
+	[Initials] [varchar](30) NOT NULL,
+	[Job Title] [varchar](30) NOT NULL,
+	[Search Name] [varchar](30) NOT NULL,
+	[Address] [varchar](50) NOT NULL,
+	[Address 2] [varchar](50) NOT NULL,
+	[City] [varchar](30) NOT NULL,
+	[Post Code] [varchar](20) NOT NULL,
+	[County] [varchar](30) NOT NULL,
+	[Phone No_] [varchar](30) NOT NULL,
+	[Mobile Phone No_] [varchar](30) NOT NULL,
+	[E-Mail] [varchar](80) NOT NULL,
+	[Alt_ Address Code] [varchar](10) NOT NULL,
+	[Alt_ Address Start Date] [datetime] NOT NULL,
+	[Alt_ Address End Date] [datetime] NOT NULL,
+	[Picture] [image] NULL,
+	[Birth Date] [datetime] NOT NULL,
+	[Social Security No_] [varchar](30) NOT NULL,
+	[Union Code] [varchar](10) NOT NULL,
+	[Union Membership No_] [varchar](30) NOT NULL,
+	[Gender] [int] NOT NULL,
+	[Country_Region Code] [varchar](10) NOT NULL,
+	[Manager No_] [varchar](20) NOT NULL,
+	[Emplymt_ Contract Code] [varchar](10) NOT NULL,
+	[Statistics Group Code] [varchar](10) NOT NULL,
+	[Employment Date] [datetime] NOT NULL,
+	[Status] [int] NOT NULL,
+	[Inactive Date] [datetime] NOT NULL,
+	[Cause of Inactivity Code] [varchar](10) NOT NULL,
+	[Termination Date] [datetime] NOT NULL,
+	[Grounds for Term_ Code] [varchar](10) NOT NULL,
+	[Global Dimension 1 Code] [varchar](20) NOT NULL,
+	[Global Dimension 2 Code] [varchar](20) NOT NULL,
+	[Resource No_] [varchar](20) NOT NULL,
+	[Last Date Modified] [datetime] NOT NULL,
+	[Extension] [varchar](30) NOT NULL,
+	[Pager] [varchar](30) NOT NULL,
+	[Fax No_] [varchar](30) NOT NULL,
+	[Company E-Mail] [varchar](80) NOT NULL,
+	[Title] [varchar](30) NOT NULL,
+	[Salespers__Purch_ Code] [varchar](10) NOT NULL,
+	[No_ Series] [varchar](10) NOT NULL,
+	[Previous School Worked as] [varchar](30) NOT NULL,
+	[Previous School From] [datetime] NOT NULL,
+	[Previous School Till] [datetime] NOT NULL,
+	[Previous Gross Salary] [decimal](38, 20) NOT NULL,
+	[Reason For Leaving] [varchar](100) NOT NULL,
+	[Joined as] [varchar](50) NOT NULL,
+	[Promotion if Any] [varchar](50) NOT NULL,
+	[From] [datetime] NOT NULL,
+	[To] [datetime] NOT NULL,
+	[Gross Salary] [decimal](38, 20) NOT NULL,
+	[Approval Status] [int] NOT NULL,
+	[Job Status] [int] NOT NULL,
+	[Blood Group] [int] NOT NULL,
+	[PAN Card No_] [varchar](10) NOT NULL,
+	[Passport No_] [varchar](10) NOT NULL,
+	[B_ED] [tinyint] NOT NULL,
+	[Reason for Inactivity] [int] NOT NULL,
+	[Remarks for Termination] [varchar](50) NOT NULL,
+	[Start Date] [datetime] NOT NULL,
+	[End Date] [datetime] NOT NULL,
+	[ESI No_] [varchar](10) NOT NULL,
+	[CTC] [decimal](38, 20) NOT NULL,
+	[Hours_Day] [int] NOT NULL,
+	[No_ of Hours_Week] [int] NOT NULL,
+	[Employee Image File] [varchar](250) NOT NULL,
+	[Employee Type] [int] NOT NULL,
+	[Department] [varchar](20) NOT NULL,
+	[Attendance] [int] NOT NULL,
+	[Attendance Date] [datetime] NOT NULL,
+	[Leave] [tinyint] NOT NULL,
+	[Absent] [tinyint] NOT NULL,
+	[Synchronization] [bit] NOT NULL,
+	[Company Name] [varchar](100) NOT NULL,
+	[InsertStatus] [bit] NOT NULL,
+	[UpdateStatus] [bit] NOT NULL,
+	[State] [varchar](50) NULL,
+	[Teaching Type] [varchar](50) NULL,
+	[Qualification] [varchar](25) NULL,
+	[Degree] [varchar](50) NULL,
+	[University] [varchar](50) NULL,
+	[Qual Country] [varchar](30) NULL,
+	[Qual State] [varchar](30) NULL,
+	[Qual City] [varchar](30) NULL,
+	[Qual Passing Year] [varchar](30) NULL,
+	[PanCard] [varchar](250) NULL,
+	[Aadhar] [varchar](250) NULL,
+	[Apointment Letter] [varchar](250) NULL,
+	[H Qualification] [varchar](250) NULL,
+	[Prev Employment] [varchar](250) NULL,
+	[Dob] [varchar](250) NULL,
+	[Voter Id] [varchar](250) NULL,
+	[Passport] [varchar](250) NULL,
+	[Pan] [varchar](250) NULL,
+	[State1] [varchar](50) NULL,
+	[Image] [varchar](250) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC,
+	[No_] ASC,
+	[Company Name] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Default [DF__Employee__Pictur__1FCDBCEB]    Script Date: 09/26/2016 13:46:48 ******/
+ALTER TABLE [dbo].[Employee] ADD  DEFAULT (NULL) FOR [Picture]
+GO

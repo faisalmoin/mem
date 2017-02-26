@@ -1,0 +1,1 @@
+D:\xampp\php\php.exe -f D:\xampp\htdocs\portal\AutoMailer\agreement_details.php

@@ -1,0 +1,37 @@
+body {font-size:10pt;}
+.menu-bar { width: 100%; font-size: 12pt; margin: 0px; padding: 0px; text-align: center; border: 1px #804020 solid; border-top: 5px #FFD504 solid; }
+table.data-table { font-size: 10pt; margin: 0px; padding: 5px; border: 1px #FFA804 solid; }
+
+tr.odd-row { background-color: white; }
+tr.odd-row-open { background-color: white; color: red; font-weight: bold; }
+tr.even-row { background-color: #F8F8F8; }
+tr.even-row-open { background-color: #F8F8F8; color: red; font-weight: bold;}
+
+td.data-table { padding: 5px; height: 16pt; }
+tr.data-head, td.data-head, thead.data-head { padding: 5px; height: 16pt; background: #FFA804; }
+td.detail-head, thead.detail-head { padding: 5px; height: 16pt; background: #F0C080; }
+
+td.spacer { background-color: #FFFFFF; width: 10px; height: 24pt; }
+
+td.td-left-show {text-align: left; background-color: #F0F0F0; padding: 0px; padding-left: 5px; margin: 0px;}
+td.td-right-nav {text-align: right; color: #000000; padding: 2px; margin: 0px; border-top: 2px solid #FFA804;}
+td.normal { width: 10%; background-color: #FFD504; border-bottom: 1px #FFD504 solid; border-left: 1px #FFD504 solid; border-right: 1px #FFD504 solid; }
+td.selected { width: 10%; background-color: #FFEF04; border-bottom: 2px #FFD504 solid; border-left: 2px #FFD504 solid; border-right: 2px #FFD504 solid; }
+td.disabled { width: 10%; background-color: #EEEEEE; border-bottom: 1px #FFD504 solid; border-left: 1px #FFD504 solid; border-right: 1px #FFD504 solid; }
+
+img.img-link { width: 16px; height: 16px; }
+img.img-link2 { width: 24px; height: 24px; }
+
+div.nav-bar { font-size: 8pt;}
+
+a, a:link, a:visited { text-decoration: none; color: black; height: 24pt; border-style: none;}
+a:hover { text-decoration: underline; color: black; }
+a:active { text-decoration: none; color: black; height: 24pt; }
+a.nav-bar { font-size: 8pt; }
+input.nav-bar { font-size: 8pt;}
+
+.edit-ctrl {background-color: #FFFFFF; }
+.edit-ctrl-error {background-color: #FFFFFF; border: red solid 2px; }
+.requ-ctrl {background-color: #FFF0A0; }
+.requ-ctrl-error {background-color: #FFF0A0; border: red solid 2px; }
+.monitored {		font-weight: bold; color: red; }
